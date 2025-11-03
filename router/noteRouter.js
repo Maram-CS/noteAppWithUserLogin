@@ -7,8 +7,9 @@ noteRouter.get("/getNote/:id",getANote);
 noteRouter.post("/getNoteByTitle",getNoteByTitle);
 noteRouter.get("/getAll",getAllNote);
 noteRouter.put("/updateNote/:id",updateNote);
-noteRouter.delete("/deleteNote/:id",deleteNote);
+noteRouter.post("/deleteNote",deleteNote);
 
 export default noteRouter;
+
 
 

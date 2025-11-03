@@ -1,6 +1,7 @@
 import { config } from "dotenv";
 import noteModel from "../model/noteModel.js";
 import configDb from "../configDB/noteConfig.js";
+import userModel from "../model/userModel.js";
 
 config();
 configDb(process.env.NAME_DB || "note");
@@ -66,8 +67,8 @@ const getNoteByTitle = async (req,res,next) => {
 
 const updateNote = async (req,res,next) => {
     try {
-        const note = await noteModel.findByIdAndUpdate(req.params.id,{req,body});
-         if(note) {
+        const note = await noteModel.findByIdAndUpdate(req.params.id,req.body);
+        if(note) {
         res.status(200).json({note,message:"your update success "});
       }else {
         res.status(405).json({message:"failed operation try again "});
@@ -80,8 +81,10 @@ const updateNote = async (req,res,next) => {
 
 const deleteNote = async (req,res,next) => {
     try {
-        const note = await noteModel.findByIdAndDelete(req.params.id);
+        const {Title} = req.body;
+        const note = await noteModel.findOne({Title});
         if(note) {
+        const deletedNote = await noteModel.findByIdAndDelete(note._id);
         res.status(200).json({note,message:"your delete success "});
       }else {
         res.status(405).json({message:"failed operation try again "});
