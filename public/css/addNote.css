@@ -1,4 +1,4 @@
-h1{
+h2{
     color:#b8860b;
     text-align: center;
     font-size: 80px;
@@ -39,3 +39,17 @@ body {
     background-color: #1f1f1f;
 }
 
+@media (max-width: 1080px) {
+    h2 {
+    margin: 20px 0 10px 0;
+    text-align: center;
+  }
+   form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+  }
+}

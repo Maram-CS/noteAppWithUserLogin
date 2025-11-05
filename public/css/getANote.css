@@ -1,0 +1,56 @@
+h1 {
+    text-align: center;
+    color: darkgoldenrod;
+    font-size: 80px;
+}
+
+body {
+    background-color: #1f1f1f;
+}
+
+form {
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    padding: 20px;
+    margin-left: 290px;
+    margin-right: 290px;
+    border-radius: 10px;
+    background-color: #0a0a09;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 35);
+}
+
+input {
+    font-size: 40px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+#btn:hover {
+    background-color: #b8860b;
+    color: white;
+}
+
+#btn {
+    background-color: darkgray;
+    width: 100px;
+    color: black;
+}
+
+@media (max-width: 1080px) {
+    h1 {
+    margin: 20px 0 10px 0;
+    text-align: center;
+  }
+   form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+  }
+  input {
+    font-size: 25px;
+  }
+}
