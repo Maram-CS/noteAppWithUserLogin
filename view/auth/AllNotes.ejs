@@ -12,8 +12,27 @@
             text-align: center;
             font-size: 80px;
         }
+        #btn {
+            width: 100px;
+            background-color: darkgray;
+            box-shadow: 15px 15px 20px rgba(62, 61, 61, 0.35);
+
+        }
+
+        #btn:hover {
+        background-color: #b8860b;
+        color: white;
+        }
+        
+        div {
+            text-align: center;
+        }
     </style>
     <h1>All Notes</h1>
-    <form action="/note/getAll" method="get"></form>
+    <form action="/note/getAll" method="get">
+        <div>
+            <input id="btn" type="submit" value="getAll">
+        </div>
+    </form>
 </body>
 </html>
