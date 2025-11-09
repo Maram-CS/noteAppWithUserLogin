@@ -72,4 +72,20 @@ const deleteUser = async (req,res,next) => {
     }
 }
 
-export {addUser,getAllUsers,getUser,updateUser,deleteUser};
+const loginUser = async(req,res,next) => {
+    try {
+        const {email,password} = req.body;
+        const user = await userModel.login(email,password);
+        if(user) {
+            res.status(200).json({user,message:"good job"});
+        }else {
+            res.status(400).json({message:"your password or email is wrong"});
+        }
+        next();
+    }catch(err) {
+        console.error(err);
+    }
+    
+}
+
+export {addUser,getAllUsers,getUser,updateUser,deleteUser,loginUser};

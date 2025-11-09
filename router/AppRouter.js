@@ -17,4 +17,12 @@ appRouter.get("/getANote",(req,res)=> {
 appRouter.get("/delete",(req,res)=> {
     res.render("auth/deleteANote");
 })
+appRouter.get("/createACount",(req,res)=> {
+    res.render("auth/user");
+})
+
+appRouter.get("/login",(req,res)=> {
+    res.render("auth/login");
+})
+
 export default appRouter;
